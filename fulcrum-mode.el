@@ -61,6 +61,7 @@ All commands in `lisp-mode-shared-map' are inherited by this map.")
 (defconst fulcrum-font-lock-keywords
   (eval-when-compile
     (list
+     ;; Declarations
      (list (concat "("
                    (regexp-opt '("module"
                                  "fn"
@@ -74,20 +75,16 @@ All commands in `lisp-mode-shared-map' are inherited by this map.")
                    "\\([[:word:]]*\\)")
            '(1 font-lock-keyword-face)
            '(2 font-lock-function-name-face))
-     ;; Declarations
-     (cons (concat "("
-                   (regexp-opt
-                    '("do"
-                      "while"
-                      "unless"
-                      "return"
-                      "if")
-                    t)
-                   "//>")
-           font-lock-keyword-face)
-     ;; Types
-     ;; Keywrods
-     )))
+     ;; Special forms
+     (list (concat "("
+                   (regexp-opt '("if"
+                                 "do"
+                                 "while"
+                                 "unless"
+                                 "return")
+                               'word)
+                   "\\>")
+           '(1 'font-lock-builtin-face)))))
 
 (defun fulcrum-mode-set-variables ()
   (set-syntax-table fulcrum-mode-syntax-table)
