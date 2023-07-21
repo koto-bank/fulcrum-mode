@@ -61,18 +61,17 @@ All commands in `lisp-mode-shared-map' are inherited by this map.")
 (defconst fulcrum-font-lock-keywords
   (eval-when-compile
     (list
-     (list (concat "(\\("
-                   ;; module
-                   "module\\|"
-                   ;; struct, public or private
-                   "struct-?\\|"
-                   ;; fn, public or private
-                   "fn-?\\|"
-                   ;; var
-                   "var"
-                   "\\)"
-                   "[ \t\n]*"
-                   "\\(\\sw+\\)?")
+     (list (concat "("
+                   (regexp-opt '("module"
+                                 "fn"
+                                 "fn-"
+                                 "struct"
+                                 "struct-"
+                                 "var")
+                               'word)
+                   "\\>"
+                   "[[:space:]]*"
+                   "\\([[:word:]]*\\)")
            '(1 font-lock-keyword-face)
            '(2 font-lock-function-name-face))
      ;; Declarations
