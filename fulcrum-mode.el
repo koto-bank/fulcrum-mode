@@ -1,4 +1,4 @@
-;; fulcrum-mode.el --- Major mode for Fulcrum code -*- lexical-binding: t; -*-
+;;; fulcrum-mode.el --- Major mode for Fulcrum code -*- lexical-binding: t; -*-
 
 ;; Copyright © 2022 Alexey Egorov
 ;; Copyright © 2023 Alexey Egorov, Lämppi Lütti
@@ -117,6 +117,9 @@ Blank lines separate paragraphs.  Semicolons start comments.
 \\{fulcrum-mode-map}"
   :group 'lisp
   (fulcrum-mode-set-variables))
+
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.\\(fc\\|fulcrum\\)\\'" . fulcrum-mode))
 
 (provide 'fulcrum-mode)
 
