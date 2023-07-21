@@ -50,11 +50,6 @@ It has `lisp-mode-abbrev-table' as its parent."
   "Keymap for Fulcrum mode.
 All commands in `lisp-mode-shared-map' are inherited by this map.")
 
-(defcustom fulcrum-mode-hook nil
-  "Hook run when entering Fulcrum mode."
-  :type 'hook
-  :group 'lisp)
-
 (defvar fulcrum-mode-line-process "")
 
 (defconst fulcrum-font-lock-keywords
