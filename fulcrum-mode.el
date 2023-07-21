@@ -34,6 +34,12 @@
 
 (require 'lisp-mode)
 
+(defgroup fulcrum-mode nil
+  "Major mode for Fulcrum code."
+  :prefix 'fulcrum-
+  :group 'languages)
+
+
 (define-abbrev-table 'fulcrum-mode-abbrev-table ()
   "Abbrev table for Fulcrum mode.
 It has `lisp-mode-abbrev-table' as its parent."
@@ -110,7 +116,7 @@ Commands:
 Delete converts tabs to spaces as it moves back.
 Blank lines separate paragraphs.  Semicolons start comments.
 \\{fulcrum-mode-map}"
-  :group 'lisp
+  :group 'fulcrum-mode
   (fulcrum-mode-set-variables))
 
 ;;;###autoload
