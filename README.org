@@ -1,1 +1,9 @@
 * Fulcrum Mode
+
+** Installation
+1. Clone somewhere, e.g. to =~/dev/fulcrum-mode=
+2. Set up in emacs:
+#+begin_src elisp
+  (add-to-list 'load-path "~/dev/fulcrum-mode")
+  (require 'fulcrum-mode)
+#+end_src
